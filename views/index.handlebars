@@ -1,0 +1,42 @@
+<h1 class="text-center">SANDVICHES!</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 text-center">
+            <h3>EAT DA SANDVICH!</h3>
+
+            <ul>
+            {{#each sandviches}}
+                {{#unless gone}}
+                    {{name}}
+                    <button class="eat" data-id="{{id}}">
+                        OM NOM NOM
+                    </button>
+                {{/unless}}
+            {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-6 text-center">
+            <h3>SANDVICHES YOU ALREADY ATE!</h3>
+
+            <ul>
+            {{#each sandviches}}
+                {{#if gone}}
+                {{name}}
+                {{/if}}
+            {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<h2 class="text-center">New Sandvich</h2>
+<form class="new text-center">
+    <div>
+        <label for="sandvich">Name:</label>
+        <input type="text" id="name">
+    </div>
+
+    <button type="submit">Add!</button>
+</form>
