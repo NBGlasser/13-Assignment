@@ -8,7 +8,7 @@
             <ul>
             {{#each sandviches}}
                 {{#unless gone}}
-                    {{name}}
+                    <h4 class="text-center">{{name}}</h4>
                     <button class="eat" data-id="{{id}}">
                         OM NOM NOM
                     </button>
@@ -23,7 +23,7 @@
             <ul>
             {{#each sandviches}}
                 {{#if gone}}
-                {{name}}
+                <h4 class="text-center">{{name}}</h4>
                 {{/if}}
             {{/each}}
             </ul>
