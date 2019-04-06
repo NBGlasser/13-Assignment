@@ -20,15 +20,16 @@ $(function() {
     $(".eat").on("click", function(event) {
         var id = $(this).data("id")
         event.preventDefault()
-        $.ajax("/api/sandviches/" + id, {
-          type: "PUT",
-          data: {gone: true}
-        }).then(
-          function() {
-            location.reload();
-          }
-      
-        )
+        
+          $.ajax("/api/sandviches/" + id, {
+            type: "PUT",
+            data: {gone: true}
+          }).then(
+            function() {
+              location.reload();
+            }
+          )
+        
       })
       
     

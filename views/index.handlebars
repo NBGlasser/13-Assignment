@@ -1,10 +1,11 @@
-<h1 class="text-center">SANDVICHES!</h1>
-
-<div class="container">
-    <div class="row">
-        <div class="col-6 text-center">
+<div>
+<h1 class="text-center jumbotron text-light">SANDVICHES!</h1>
+</div>
+<div class="container bg-light pt-3 pb-3">
+    <div class="row px-3">
+        <div class="col-4 pt-2 text-center border border-dark">
             <h3>EAT DA SANDVICH!</h3>
-
+            <hr>
             <ul>
             {{#each sandviches}}
                 {{#unless gone}}
@@ -16,27 +17,38 @@
             {{/each}}
             </ul>
         </div>
-
-        <div class="col-6 text-center">
+            
+        <div class="col-4 px-2 text-center">
+            <img width="320px" src="/image.png" >
+        </div>
+            
+        <div class="col-4 pt-2 text-center border border-dark">
             <h3>SANDVICHES YOU ALREADY ATE!</h3>
-
+            <hr>
             <ul>
             {{#each sandviches}}
                 {{#if gone}}
-                <h4 class="text-center">{{name}}</h4>
+                    <h4 class="text-center"><del>{{name}}</del></h4>
                 {{/if}}
             {{/each}}
             </ul>
         </div>
     </div>
+
+    <div class="row pt-3">
+        <div class="col-4"></div>
+        <div class="col-4 border border-dark">
+            <h2 class="text-center pt-2">New Sandvich</h2>
+            <hr>
+                <form class="new text-center">
+                    <div>
+                        <label for="sandvich">Name:</label>
+                        <input type="text" id="name">
+                    </div>
+
+                    <button class="my-2 btn-danger" type="submit">Add!</button>
+                </form>
+        </div>
+    </div>
 </div>
 
-<h2 class="text-center">New Sandvich</h2>
-<form class="new text-center">
-    <div>
-        <label for="sandvich">Name:</label>
-        <input type="text" id="name">
-    </div>
-
-    <button type="submit">Add!</button>
-</form>
